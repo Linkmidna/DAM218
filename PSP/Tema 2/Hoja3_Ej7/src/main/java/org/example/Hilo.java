@@ -8,6 +8,7 @@ public class Hilo extends Thread{
             System.out.println("No puedes pararme : "+veces);
             veces++;
         }
+        System.out.println("Me paraste wey...");
     }
 
     public void pararHilo(){
