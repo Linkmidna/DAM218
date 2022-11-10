@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Hijo_Aleatorio:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Hijo_Aleatorio_jar</output-path>
+    <root id="archive" name="Hijo_Aleatorio.jar">
+      <element id="module-output" name="Hijo_Aleatorio" />
+    </root>
+  </artifact>
+</component>

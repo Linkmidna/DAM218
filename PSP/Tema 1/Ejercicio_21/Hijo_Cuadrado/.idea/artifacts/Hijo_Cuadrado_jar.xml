@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Hijo_Cuadrado:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Hijo_Cuadrado_jar</output-path>
+    <root id="archive" name="Hijo_Cuadrado.jar">
+      <element id="module-output" name="Hijo_Cuadrado" />
+    </root>
+  </artifact>
+</component>

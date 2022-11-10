@@ -1,0 +1,12 @@
+plugins:
+  - jekyll-relative-links
+  - jemoji
+relative_links:
+  enabled: true
+
+github:
+  is_project_page: false
+
+theme: jekyll-theme-cayman
+title: Programación Multimedia y Dispositivos Móviles
+description: Curso 2022-2023. Iván Lorenzo Rubio

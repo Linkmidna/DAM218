@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Futbolistas>
+    <Futbolista equipo="RMA">
+        <num>12</num>
+        <alias>Tony Kroos</alias>
+        <posicion>3</posicion>
+        <altura>1.84</altura>
+    </Futbolista>
+    <Futbolista equipo="RMA">
+        <num>23</num>
+        <alias>Tiboud Courtois</alias>
+        <posicion>1</posicion>
+        <altura>1.9</altura>
+    </Futbolista>
+    <Futbolista equipo="ATM">
+        <num>33</num>
+        <alias>Joao Felix</alias>
+        <posicion>0</posicion>
+        <altura>1.78</altura>
+    </Futbolista>
+    <Futbolista equipo="BAR">
+        <num>56</num>
+        <alias>Gerard Pique</alias>
+        <posicion>2</posicion>
+        <altura>1.92</altura>
+    </Futbolista>
+    <Futbolista equipo="BAR">
+        <num>15</num>
+        <alias>Ansu Fati</alias>
+        <posicion>0</posicion>
+        <altura>1.78</altura>
+    </Futbolista>
+    <Futbolista equipo="BAR">
+        <num>16</num>
+        <alias>De Jong</alias>
+        <posicion>3</posicion>
+        <altura>1.8</altura>
+    </Futbolista>
+    <Futbolista equipo="GRA">
+        <num>5</num>
+        <alias>Rui Silva</alias>
+        <posicion>1</posicion>
+        <altura>1.91</altura>
+    </Futbolista>
+</Futbolistas>

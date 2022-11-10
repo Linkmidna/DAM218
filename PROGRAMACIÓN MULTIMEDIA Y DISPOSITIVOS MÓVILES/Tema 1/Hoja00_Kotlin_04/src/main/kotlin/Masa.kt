@@ -1,0 +1,1 @@
+data class Masa (private val tipoMasa: TipoMasa, val calorias : Double)

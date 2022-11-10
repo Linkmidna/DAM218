@@ -1,0 +1,1 @@
+data class Ingrediente (private val nombre : String, var calorias: Double)
