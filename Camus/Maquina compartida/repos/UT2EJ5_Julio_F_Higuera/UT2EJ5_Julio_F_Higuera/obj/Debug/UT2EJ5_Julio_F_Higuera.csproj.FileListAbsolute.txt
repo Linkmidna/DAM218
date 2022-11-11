@@ -1,0 +1,13 @@
+C:\Users\Alumno\source\repos\UT2EJ5_Julio_F_Higuera\UT2EJ5_Julio_F_Higuera\bin\Debug\UT2EJ5_Julio_F_Higuera.exe.config
+C:\Users\Alumno\source\repos\UT2EJ5_Julio_F_Higuera\UT2EJ5_Julio_F_Higuera\bin\Debug\UT2EJ5_Julio_F_Higuera.exe
+C:\Users\Alumno\source\repos\UT2EJ5_Julio_F_Higuera\UT2EJ5_Julio_F_Higuera\bin\Debug\UT2EJ5_Julio_F_Higuera.pdb
+C:\Users\Alumno\source\repos\UT2EJ5_Julio_F_Higuera\UT2EJ5_Julio_F_Higuera\obj\Debug\UT2EJ5_Julio_F_Higuera.csproj.AssemblyReference.cache
+C:\Users\Alumno\source\repos\UT2EJ5_Julio_F_Higuera\UT2EJ5_Julio_F_Higuera\obj\Debug\UT2EJ5_Julio_F_Higuera.csproj.SuggestedBindingRedirects.cache
+C:\Users\Alumno\source\repos\UT2EJ5_Julio_F_Higuera\UT2EJ5_Julio_F_Higuera\obj\Debug\UT2EJ5_Julio_F_Higuera.Form1.resources
+C:\Users\Alumno\source\repos\UT2EJ5_Julio_F_Higuera\UT2EJ5_Julio_F_Higuera\obj\Debug\UT2EJ5_Julio_F_Higuera.Properties.Resources.resources
+C:\Users\Alumno\source\repos\UT2EJ5_Julio_F_Higuera\UT2EJ5_Julio_F_Higuera\obj\Debug\UT2EJ5_Julio_F_Higuera.csproj.GenerateResource.cache
+C:\Users\Alumno\source\repos\UT2EJ5_Julio_F_Higuera\UT2EJ5_Julio_F_Higuera\obj\Debug\UT2EJ5_Julio_F_Higuera.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\source\repos\UT2EJ5_Julio_F_Higuera\UT2EJ5_Julio_F_Higuera\obj\Debug\UT2EJ5_Julio_F_Higuera.exe
+C:\Users\Alumno\source\repos\UT2EJ5_Julio_F_Higuera\UT2EJ5_Julio_F_Higuera\obj\Debug\UT2EJ5_Julio_F_Higuera.pdb
+C:\Users\Alumno\source\repos\UT2EJ5_Julio_F_Higuera\UT2EJ5_Julio_F_Higuera\obj\Debug\UT2EJ5_Julio_F_Higuera.Form2.resources
+C:\Users\Alumno\source\repos\UT2EJ5_Julio_F_Higuera\UT2EJ5_Julio_F_Higuera\obj\Debug\UT2EJ5_Julio_F_Higuera.Form3.resources

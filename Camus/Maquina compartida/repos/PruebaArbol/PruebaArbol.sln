@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaArbol", "PruebaArbol\PruebaArbol.csproj", "{11AB6615-3655-42A7-8D7E-34F4BF7BEB0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11AB6615-3655-42A7-8D7E-34F4BF7BEB0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11AB6615-3655-42A7-8D7E-34F4BF7BEB0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11AB6615-3655-42A7-8D7E-34F4BF7BEB0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11AB6615-3655-42A7-8D7E-34F4BF7BEB0B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {616E59C2-328F-46B8-8430-4261BDAAB8DD}
+	EndGlobalSection
+EndGlobal

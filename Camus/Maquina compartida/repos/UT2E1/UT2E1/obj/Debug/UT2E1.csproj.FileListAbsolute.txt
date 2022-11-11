@@ -1,0 +1,11 @@
+C:\Users\Alumno\source\repos\UT2E1\UT2E1\bin\Debug\UT2E1.exe.config
+C:\Users\Alumno\source\repos\UT2E1\UT2E1\bin\Debug\UT2E1.exe
+C:\Users\Alumno\source\repos\UT2E1\UT2E1\bin\Debug\UT2E1.pdb
+C:\Users\Alumno\source\repos\UT2E1\UT2E1\obj\Debug\UT2E1.csproj.AssemblyReference.cache
+C:\Users\Alumno\source\repos\UT2E1\UT2E1\obj\Debug\UT2E1.csproj.SuggestedBindingRedirects.cache
+C:\Users\Alumno\source\repos\UT2E1\UT2E1\obj\Debug\UT2E1.Form1.resources
+C:\Users\Alumno\source\repos\UT2E1\UT2E1\obj\Debug\UT2E1.Properties.Resources.resources
+C:\Users\Alumno\source\repos\UT2E1\UT2E1\obj\Debug\UT2E1.csproj.GenerateResource.cache
+C:\Users\Alumno\source\repos\UT2E1\UT2E1\obj\Debug\UT2E1.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\source\repos\UT2E1\UT2E1\obj\Debug\UT2E1.exe
+C:\Users\Alumno\source\repos\UT2E1\UT2E1\obj\Debug\UT2E1.pdb

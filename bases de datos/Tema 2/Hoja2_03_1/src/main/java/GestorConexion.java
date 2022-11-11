@@ -168,22 +168,78 @@ public class GestorConexion {
         Scanner entrada = new Scanner (System.in);
         System.out.println("Introduce el nombre del grupo:");
         String grupo = entrada.nextLine();
+
         try{
+            con.setAutoCommit(false);
             PreparedStatement prepSt = con.prepareStatement("SELECT codgrupo FROM grupos where nombre = ? ;");
             prepSt.setString(1,grupo);
             ResultSet rs = prepSt.executeQuery();
 
             if (rs.next()){
                 int numGrupo = rs.getInt(1);
-                prepSt = con.prepareStatement("SELECT numCancion FROM canciones where grupo = ?");
+                prepSt = con.prepareStatement("DELETE votos FROM canciones INNER JOIN votos ON cancion=numCancion WHERE grupo=?");
                 prepSt.setInt(1,numGrupo);
-                rs = prepSt.executeQuery();
-                while(rs.next()){
-                    PreparedStatement pre = con.prepareStatement("Delete ");
-                    --------------------------
-                            -------------------
-                                    ------------------
-                                            -´------------------------
+                int numero= prepSt.executeUpdate();
+                System.out.println("Se eliminaron "+numero+" votos a canciones del grupo");
+
+                prepSt = con.prepareStatement("DELETE canciones FROM canciones WHERE grupo=?");
+                prepSt.setInt(1,numGrupo);
+                numero=prepSt.executeUpdate();
+                System.out.println("Se han eliminado "+numero+" canciones del grupo.");
+            }else{
+                System.out.println("El grupo no existe");
+            }
+
+            con.commit();
+
+            rs.close();
+            prepSt.close();
+
+            con.setAutoCommit(true);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void modificarDatosGrupo(){
+        Scanner entrada = new Scanner (System.in);
+        System.out.println("Introduce el nombre del grupo:");
+        String grupo = entrada.nextLine();
+        try{
+            PreparedStatement prepSt = con.prepareStatement("SELECT codgrupo,nombre,localidad,estilo,annoGrab,fechaEstreno,compania FROM grupos where nombre = ? ;");
+            prepSt.setString(1,grupo);
+            ResultSet rs = prepSt.executeQuery();
+
+            if (rs.next()){
+                Grupo grupoMod = new Grupo();
+                grupoMod.setCodgrupo(rs.getInt(1));
+                grupoMod.setNombre(rs.getString(2));
+                grupoMod.setLocalidad(rs.getString(3));
+                grupoMod.setEstilo(rs.getString(4));
+                grupoMod.setAnnoGrab(rs.getInt(5));
+                grupoMod.setFechaEstreno(rs.getString(6));
+                grupoMod.setCompania(rs.getString(7));
+
+                if (rs.next()){
+                    int opc=0;
+                    do{
+                        System.out.println("Nombre:    Localidad:    Estilo:    Año grabacion:    Fecha estreno:    Compañia:");
+                        System.out.println(grupoMod.getNombre() + "    " + grupoMod.getLocalidad() + "    " + grupoMod.getEstilo() + "    " + grupoMod.getAnnoGrab() + "    " + grupoMod.getFechaEstreno() + "    " + grupoMod.getCompania());
+                        System.out.println("Introduce el numero del campo que quieras modificar o 0 para salir:");
+                        opc = entrada.nextInt();
+
+                        switch (opc) {
+
+                            case 0:
+                                System.out.println("Estas saliendo del programa");
+                                break;
+                            default:
+                                System.out.println("Por favor escoge una opcion valida");
+                        }
+                    }while(opc!=0);
+                    prepSt = con.prepareStatement("UPDATE grupo SET codgrupo=? nombre=? localidad=?");
+                    prepSt.executeUpdate();
                 }
             }else{
                 System.out.println("El grupo no existe");

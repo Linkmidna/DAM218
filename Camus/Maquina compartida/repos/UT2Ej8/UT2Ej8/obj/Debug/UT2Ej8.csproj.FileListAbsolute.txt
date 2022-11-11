@@ -1,0 +1,5 @@
+C:\Users\Alumno\source\repos\UT2Ej8\UT2Ej8\obj\Debug\UT2Ej8.csproj.AssemblyReference.cache
+C:\Users\Alumno\source\repos\UT2Ej8\UT2Ej8\obj\Debug\UT2Ej8.csproj.SuggestedBindingRedirects.cache
+C:\Users\Alumno\source\repos\UT2Ej8\UT2Ej8\obj\Debug\UT2Ej8.Properties.Resources.resources
+C:\Users\Alumno\source\repos\UT2Ej8\UT2Ej8\obj\Debug\UT2Ej8.csproj.GenerateResource.cache
+C:\Users\Alumno\source\repos\UT2Ej8\UT2Ej8\obj\Debug\UT2Ej8.csproj.CoreCompileInputs.cache

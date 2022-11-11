@@ -47,7 +47,7 @@ public class Main {
                     gesCon.ultimosVotos();
                     break;
                 case 8:
-
+                    gesCon.eliminarCanciones();
                     break;
                 case 9:
 
