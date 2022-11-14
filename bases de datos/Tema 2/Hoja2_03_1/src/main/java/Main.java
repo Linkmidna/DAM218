@@ -50,7 +50,7 @@ public class Main {
                     gesCon.eliminarCanciones();
                     break;
                 case 9:
-
+                    gesCon.modificarDatosGrupo();
                     break;
                 default:
                     System.out.println("Gracias por usar nuestro programa");

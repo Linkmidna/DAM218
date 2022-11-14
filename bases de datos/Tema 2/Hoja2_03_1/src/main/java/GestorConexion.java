@@ -221,27 +221,56 @@ public class GestorConexion {
                 grupoMod.setFechaEstreno(rs.getString(6));
                 grupoMod.setCompania(rs.getString(7));
 
-                if (rs.next()){
                     int opc=0;
                     do{
-                        System.out.println("Nombre:    Localidad:    Estilo:    Año grabacion:    Fecha estreno:    Compañia:");
+                        System.out.println("Nombre:    Localidad:    Estilo:    Año grabación:    Fecha estreno:    Compañía:");
                         System.out.println(grupoMod.getNombre() + "    " + grupoMod.getLocalidad() + "    " + grupoMod.getEstilo() + "    " + grupoMod.getAnnoGrab() + "    " + grupoMod.getFechaEstreno() + "    " + grupoMod.getCompania());
-                        System.out.println("Introduce el numero del campo que quieras modificar o 0 para salir:");
+                        System.out.println("Introduce el numero del campo que quieras modificar o 0 para guardar:");
                         opc = entrada.nextInt();
 
                         switch (opc) {
-
+                            case 1:
+                                System.out.println("Introduce el nuevo nombre:");
+                                grupoMod.setNombre(entrada.next());
+                                break;
+                            case 2:
+                                System.out.println("Introduce la nueva localidad:");
+                                grupoMod.setLocalidad(entrada.next());
+                                break;
+                            case 3:
+                                System.out.println("Introduce el nuevo estilo:");
+                                grupoMod.setEstilo(entrada.next());
+                                break;
+                            case 4:
+                                System.out.println("Introduce el nuevo año de grabación:");
+                                grupoMod.setAnnoGrab(entrada.nextInt());
+                                break;
+                            case 5:
+                                System.out.println("Introduce la nueva fecha de estreno:");
+                                grupoMod.setFechaEstreno(entrada.next());
+                                break;
+                            case 6:
+                                System.out.println("Introduce la nueva compañia:");
+                                grupoMod.setCompania(entrada.next());
+                                break;
                             case 0:
-                                System.out.println("Estas saliendo del programa");
+                                System.out.println("Estas saliendo del programa, se va a modificar el grupo en la base de datos");
                                 break;
                             default:
                                 System.out.println("Por favor escoge una opcion valida");
                         }
                     }while(opc!=0);
-                    prepSt = con.prepareStatement("UPDATE grupo SET codgrupo=? nombre=? localidad=?");
+                    prepSt = con.prepareStatement("UPDATE grupos SET nombre=? ,localidad=? ,estilo=? ,annoGrab=? ,fechaEstreno=? ,compania=? where codgrupo=?");
+                    prepSt.setString(1,grupoMod.getNombre());
+                    prepSt.setString(2,grupoMod.getLocalidad());
+                    prepSt.setString(3,grupoMod.getEstilo());
+                    prepSt.setInt(4,grupoMod.getAnnoGrab());
+                    prepSt.setString(5,grupoMod.getFechaEstreno());
+                    prepSt.setString(6,grupoMod.getCompania());
+                    prepSt.setInt(7,grupoMod.getCodgrupo());
                     prepSt.executeUpdate();
-                }
-            }else{
+                System.out.println("Grupo modificado");
+                }else{
                 System.out.println("El grupo no existe");
             }
 
