@@ -9,8 +9,8 @@ namespace UT2Ej8.Clases
 {
     public class Cita
     {
-        int CitaId { get; set; }
-        DateTime Fecha { get; set; }
-        int PersonaId { get; set; }
+        public int CitaId { get; set; }
+        public DateTime Fecha { get; set; }
+        public int PersonaId { get; set; }
     }
 }

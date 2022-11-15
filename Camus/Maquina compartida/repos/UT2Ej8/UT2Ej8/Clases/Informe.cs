@@ -8,9 +8,9 @@ namespace UT2Ej8.Clases
 {
     public class Informe
     {
-        string Alergias { get; set; }
-        DateTime Nacimiento { get; set; }
-        string Observaciones { get; set; }
-        int PersonaId { get; set; }
+        public string Alergias { get; set; }
+        public DateTime Nacimiento { get; set; }
+        public string Observaciones { get; set; }
+        public int PersonaId { get; set; }
     }
 }

@@ -49,15 +49,27 @@
     <Compile Include="Clases\Cita.cs" />
     <Compile Include="Clases\Clinica.cs" />
     <Compile Include="Clases\Informe.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="fPersonas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="fPersonas.Designer.cs">
+      <DependentUpon>fPersonas.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Persona.cs" />
+    <Compile Include="fPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fPersona.Designer.cs">
+      <DependentUpon>fPersona.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fPersonas.resx">
+      <DependentUpon>fPersonas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fPersona.resx">
+      <DependentUpon>fPersona.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

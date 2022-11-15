@@ -49,6 +49,9 @@ namespace UT2Ej8
         public void CrearPersona(Persona persona)
         {
             personas.Add(persona);
+            Informe informe = new Informe();
+            informe.PersonaId=persona.PersonaId;
+            CrearInforme(informe);
         }
         public void BorrarPersona(int personaId)
         {
@@ -59,34 +62,74 @@ namespace UT2Ej8
                     personas.Remove(personas[i]);
                 }
             }
+            BorrarInforme(personaId);
+            Cita[] citasBuscadas = BuscarCitas(personaId);
+            for (int i = 0; i < citasBuscadas.Length; i++)
+            {
+                BorrarCita(citasBuscadas[i].CitaId);
+            }
         }
         public Informe BuscarInforme(int personaId)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < informes.Count; i++)
+            {
+                if (informes[i].PersonaId == personaId)
+                {
+                    return informes[i];
+                }
+            }
+            return null;
         }
         private void CrearInforme(Informe informe)
         {
-            throw new NotImplementedException();
+            informes.Add(informe);
         }
         private void BorrarInforme(int personaId)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < informes.Count; i++)
+            {
+                if (informes[i].PersonaId == personaId)
+                {
+                    informes.Remove(informes[i]);
+                }
+            }
         }
         public Cita[] BuscarCitas(int personaId)
         {
-            throw new NotImplementedException();
+            List<Cita> citasBuscadas = citas;
+            for (int i = 0; i < citas.Count; i++)
+            {
+                if (citas[i].PersonaId!=personaId)
+                {
+                    citasBuscadas.Remove(citas[i]);
+                }
+            }
+            return citasBuscadas.ToArray();
         }
         public Cita BuscarCita(int citaId)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < citas.Count; i++)
+            {
+                if (citas[i].PersonaId == citaId)
+                {
+                    return citas[i];
+                }
+            }
+            return null;
         }
         public void CrearCita(Cita cita)
         {
-            throw new NotImplementedException();
+            citas.Add(cita);
         }
         public void BorrarCita(int citaId)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < citas.Count; i++)
+            {
+                if (citas[i].PersonaId == citaId)
+                {
+                    citas.Remove(citas[i]);
+                }
+            }
         }
     }
 }
