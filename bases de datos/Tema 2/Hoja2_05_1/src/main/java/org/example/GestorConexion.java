@@ -57,6 +57,7 @@ public class GestorConexion {
                 int opc = entrada.nextInt();
                 if (opc == 1){
                     System.out.println("Introduce el nuevo nombre de usuario:");
+                    entrada.nextLine();
                     String nom = entrada.nextLine();
                     hr.updateString(1,nom);
                     hr.updateRow();
@@ -79,8 +80,8 @@ public class GestorConexion {
     public void gestionVotosV2(){
         try{
             con.setAutoCommit(false);
-            Statement foreign = con.createStatement();
-            foreign.executeQuery("ALTER TABLE votos");
+            //Si quieres utilizar updateable querys en esta parte aunque no lo uses debes añadir en el select la primery key de la tabla que cambies Ej: el user en la linea 105
+            //Pero aun asi en parte de este ejercicio no tienes por que usar una updateable query sino ejecutar un update sin mas ya que tienes los datos Ej: linea 123 y 127
             Statement stmt= con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
             ResultSet hr = stmt.executeQuery("SELECT usuario,fecha,cancion FROM votos ORDER BY fecha DESC LIMIT 10;");
 
@@ -96,19 +97,20 @@ public class GestorConexion {
                 int opc = entrada.nextInt();
                 if (opc == 1){
                     System.out.println("Introduce el nuevo nombre de usuario:");
+                    entrada.nextLine();
                     String nom = entrada.nextLine();
                     hr.updateString(1,nom);
                     hr.updateRow();
                     System.out.println("Nuevo nombre: "+nom);
                     pos++;
 
-                    PreparedStatement prepSt1= con.prepareStatement("SELECT  numvotos FROM usuarios WHERE user=?", ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+                    PreparedStatement prepSt1= con.prepareStatement("SELECT  numvotos,user FROM usuarios WHERE user=?", ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
                     prepSt1.setString(1,voto.getUsuario());
                     ResultSet usr1 = prepSt1.executeQuery();
                     usr1.next();
                     usr1.updateInt(1,usr1.getInt(1)-1);
 
-                    PreparedStatement prepSt2= con.prepareStatement("SELECT  numvotos FROM usuarios WHERE user=?", ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+                    PreparedStatement prepSt2= con.prepareStatement("SELECT  numvotos,user FROM usuarios WHERE user=?", ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
                     prepSt2.setString(1,nom);
                     ResultSet usr2 = prepSt2.executeQuery();
                     usr2.next();
@@ -120,17 +122,13 @@ public class GestorConexion {
                     System.out.println("Voto eliminado");
                     hr.absolute(pos-1);
 
-                    PreparedStatement prepSt1= con.prepareStatement("SELECT  total_votos FROM canciones WHERE numCancion=?", ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+                    PreparedStatement prepSt1= con.prepareStatement("UPDATE canciones SET total_votos = total_votos + 1 WHERE numCancion=?");
                     prepSt1.setInt(1,voto.getCancion());
-                    ResultSet can1 = prepSt1.executeQuery();
-                    can1.next();
-                    can1.updateInt(1,can1.getInt(1)-1);
+                    prepSt1.executeUpdate();
 
-                    PreparedStatement prepSt2= con.prepareStatement("SELECT  numvotos FROM usuarios WHERE user=?", ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
-                    prepSt1.setString(1,voto.getUsuario());
-                    ResultSet usr1 = prepSt1.executeQuery();
-                    usr1.next();
-                    usr1.updateInt(1,usr1.getInt(1)-1);
+                    PreparedStatement prepSt2= con.prepareStatement("UPDATE usuarios SET numvotos = numvotos + 1 WHERE user=?");
+                    prepSt2.setString(1,voto.getUsuario());
+                    prepSt2.executeUpdate();
 
                     con.commit();
                 }else{
