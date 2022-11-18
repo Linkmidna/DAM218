@@ -80,7 +80,7 @@ public class GestorConexion {
     public void gestionVotosV2(){
         try{
             con.setAutoCommit(false);
-            //Si quieres utilizar updateable querys en esta parte aunque no lo uses debes añadir en el select la primery key de la tabla que cambies Ej: el user en la linea 105
+            //Si quieres utilizar updateable querys en esta parte aunque no lo uses debes añadir en el select la primary key de la tabla que cambies Ej: el user en la linea 105
             //Pero aun asi en parte de este ejercicio no tienes por que usar una updateable query sino ejecutar un update sin mas ya que tienes los datos Ej: linea 123 y 127
             Statement stmt= con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
             ResultSet hr = stmt.executeQuery("SELECT usuario,fecha,cancion FROM votos ORDER BY fecha DESC LIMIT 10;");
@@ -122,11 +122,11 @@ public class GestorConexion {
                     System.out.println("Voto eliminado");
                     hr.absolute(pos-1);
 
-                    PreparedStatement prepSt1= con.prepareStatement("UPDATE canciones SET total_votos = total_votos + 1 WHERE numCancion=?");
+                    PreparedStatement prepSt1= con.prepareStatement("UPDATE canciones SET total_votos = total_votos - 1 WHERE numCancion=?");
                     prepSt1.setInt(1,voto.getCancion());
                     prepSt1.executeUpdate();
 
-                    PreparedStatement prepSt2= con.prepareStatement("UPDATE usuarios SET numvotos = numvotos + 1 WHERE user=?");
+                    PreparedStatement prepSt2= con.prepareStatement("UPDATE usuarios SET numvotos = numvotos - 1 WHERE user=?");
                     prepSt2.setString(1,voto.getUsuario());
                     prepSt2.executeUpdate();
 
