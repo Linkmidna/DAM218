@@ -1,0 +1,13 @@
+C:\Users\Alumno\source\repos\UT2EJ9\UT2EJ9\bin\Debug\UT2EJ9.exe.config
+C:\Users\Alumno\source\repos\UT2EJ9\UT2EJ9\bin\Debug\UT2EJ9.exe
+C:\Users\Alumno\source\repos\UT2EJ9\UT2EJ9\bin\Debug\UT2EJ9.pdb
+C:\Users\Alumno\source\repos\UT2EJ9\UT2EJ9\obj\Debug\UT2EJ9.csproj.AssemblyReference.cache
+C:\Users\Alumno\source\repos\UT2EJ9\UT2EJ9\obj\Debug\UT2EJ9.csproj.SuggestedBindingRedirects.cache
+C:\Users\Alumno\source\repos\UT2EJ9\UT2EJ9\obj\Debug\UT2EJ9.Contenedor.resources
+C:\Users\Alumno\source\repos\UT2EJ9\UT2EJ9\obj\Debug\UT2EJ9.Properties.Resources.resources
+C:\Users\Alumno\source\repos\UT2EJ9\UT2EJ9\obj\Debug\UT2EJ9.csproj.GenerateResource.cache
+C:\Users\Alumno\source\repos\UT2EJ9\UT2EJ9\obj\Debug\UT2EJ9.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\source\repos\UT2EJ9\UT2EJ9\obj\Debug\UT2EJ9.exe
+C:\Users\Alumno\source\repos\UT2EJ9\UT2EJ9\obj\Debug\UT2EJ9.pdb
+C:\Users\Alumno\source\repos\UT2EJ9\UT2EJ9\obj\Debug\UT2EJ9.ListaLibroFrm.resources
+C:\Users\Alumno\source\repos\UT2EJ9\UT2EJ9\obj\Debug\UT2EJ9.LibroFrm.resources
