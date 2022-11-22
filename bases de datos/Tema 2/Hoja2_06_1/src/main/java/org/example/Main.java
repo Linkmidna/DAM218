@@ -8,13 +8,15 @@ public class Main {
     public static void main(String[] args) {
         try {
             Connection con=Conexion.getConexion();
-            GestorConexion gesCon = new GestorConexion(con);
+            Connection con2=Conexion2.getConexion();
+            GestorConexion gesCon = new GestorConexion(con,con2);
             Scanner entrada = new Scanner (System.in);
             int opc;
             do{
-                System.out.println("1. Crear datos_coches DB");
-                System.out.println("2. algo de coches tambien?");
-                System.out.println("3. otra cosa");
+                System.out.println("1. Crear datos_coches DB por lineas");
+                System.out.println("2. Crear datos_coches DB de golpe");
+                System.out.println("3. Crear Municipios DB");
+                System.out.println("4. Siguiente jornada futbolera");
                 System.out.println("0. Salir");
 
                 opc = entrada.nextInt();
@@ -27,6 +29,10 @@ public class Main {
                         gesCon.crearCochesDBV2();
                         break;
                     case 3:
+                        gesCon.crearMunicipios();
+                        break;
+                    case 4:
+                        gesCon.siguienteJornada();
                         break;
                     default:
                         System.out.println("Gracias por usar nuestro programa");
