@@ -1,0 +1,4 @@
+No se puede encontrar/abrir el archivo: fich1.txt
+
+Final inesperado de archivo
+
