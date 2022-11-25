@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Demo.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DemoStoreContainer">
+    <EntitySet Name="Clientes" EntityType="Demo.Store.Clientes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Gastos" EntityType="Demo.Store.Gastos" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Gastos_Clientes" Association="Demo.Store.FK_Gastos_Clientes">
+      <End Role="Cliente" EntitySet="Clientes" />
+      <End Role="Gasto" EntitySet="Gastos" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="ClienteId" />
+    </Key>
+    <Property Name="ClienteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Gastos">
+    <Key>
+      <PropertyRef Name="GastoId" />
+      <PropertyRef Name="Importe" />
+      <PropertyRef Name="Fecha" />
+      <PropertyRef Name="ClienteId" />
+    </Key>
+    <Property Name="GastoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Importe" Type="float" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="ClienteId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Gastos_Clientes">
+    <End Role="Cliente" Type="Demo.Store.Clientes" Multiplicity="1" />
+    <End Role="Gasto" Type="Demo.Store.Gastos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="ClienteId" />
+      </Principal>
+      <Dependent Role="Gasto">
+        <PropertyRef Name="ClienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

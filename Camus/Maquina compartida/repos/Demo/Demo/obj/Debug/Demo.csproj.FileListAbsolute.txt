@@ -1,0 +1,13 @@
+C:\Users\Alumno\source\repos\Demo\Demo\bin\Debug\Demo.exe.config
+C:\Users\Alumno\source\repos\Demo\Demo\bin\Debug\Demo.exe
+C:\Users\Alumno\source\repos\Demo\Demo\bin\Debug\Demo.pdb
+C:\Users\Alumno\source\repos\Demo\Demo\bin\Debug\EntityFramework.dll
+C:\Users\Alumno\source\repos\Demo\Demo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Alumno\source\repos\Demo\Demo\bin\Debug\EntityFramework.xml
+C:\Users\Alumno\source\repos\Demo\Demo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Alumno\source\repos\Demo\Demo\obj\Debug\Demo.csproj.AssemblyReference.cache
+C:\Users\Alumno\source\repos\Demo\Demo\obj\Debug\Demo.csproj.SuggestedBindingRedirects.cache
+C:\Users\Alumno\source\repos\Demo\Demo\obj\Debug\Demo.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\source\repos\Demo\Demo\obj\Debug\Demo.csproj.CopyComplete
+C:\Users\Alumno\source\repos\Demo\Demo\obj\Debug\Demo.exe
+C:\Users\Alumno\source\repos\Demo\Demo\obj\Debug\Demo.pdb

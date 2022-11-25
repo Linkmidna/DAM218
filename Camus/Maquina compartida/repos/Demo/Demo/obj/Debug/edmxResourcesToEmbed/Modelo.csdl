@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Demo" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="ClienteId" />
+    </Key>
+    <Property Name="ClienteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Gasto">
+    <Key>
+      <PropertyRef Name="GastoId" />
+      <PropertyRef Name="Importe" />
+      <PropertyRef Name="Fecha" />
+      <PropertyRef Name="ClienteId" />
+    </Key>
+    <Property Name="GastoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Importe" Type="Double" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ClienteId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DemoBD" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+    <EntitySet Name="Gastos" EntityType="Self.Gasto" />
+    <AssociationSet Name="FK_Gastos_Clientes" Association="Demo.FK_Gastos_Clientes">
+      <End Role="Cliente" EntitySet="Clientes" />
+      <End Role="Gasto" EntitySet="Gastos" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_Gastos_Clientes">
+    <End Type="Demo.Cliente" Role="Cliente" Multiplicity="1" />
+    <End Type="Demo.Gasto" Role="Gasto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="ClienteId" />
+      </Principal>
+      <Dependent Role="Gasto">
+        <PropertyRef Name="ClienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

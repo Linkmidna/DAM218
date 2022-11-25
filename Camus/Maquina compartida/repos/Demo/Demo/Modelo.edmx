@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Demo.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DemoStoreContainer">
+    <EntitySet Name="Clientes" EntityType="Demo.Store.Clientes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Gastos" EntityType="Demo.Store.Gastos" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Gastos_Clientes" Association="Demo.Store.FK_Gastos_Clientes">
+      <End Role="Cliente" EntitySet="Clientes" />
+      <End Role="Gasto" EntitySet="Gastos" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="ClienteId" />
+    </Key>
+    <Property Name="ClienteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Gastos">
+    <Key>
+      <PropertyRef Name="GastoId" />
+      <PropertyRef Name="Importe" />
+      <PropertyRef Name="Fecha" />
+      <PropertyRef Name="ClienteId" />
+    </Key>
+    <Property Name="GastoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Importe" Type="float" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="ClienteId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Gastos_Clientes">
+    <End Role="Cliente" Type="Demo.Store.Clientes" Multiplicity="1" />
+    <End Role="Gasto" Type="Demo.Store.Gastos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="ClienteId" />
+      </Principal>
+      <Dependent Role="Gasto">
+        <PropertyRef Name="ClienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Demo" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="ClienteId" />
+          </Key>
+          <Property Name="ClienteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gasto">
+          <Key>
+            <PropertyRef Name="GastoId" />
+            <PropertyRef Name="Importe" />
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="ClienteId" />
+          </Key>
+          <Property Name="GastoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Importe" Type="Double" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="ClienteId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DemoBD" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+          <EntitySet Name="Gastos" EntityType="Self.Gasto" />
+          <AssociationSet Name="FK_Gastos_Clientes" Association="Demo.FK_Gastos_Clientes">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Gasto" EntitySet="Gastos" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_Gastos_Clientes">
+          <End Type="Demo.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="Demo.Gasto" Role="Gasto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="ClienteId" />
+            </Principal>
+            <Dependent Role="Gasto">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DemoStoreContainer" CdmEntityContainer="DemoBD">
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="IsTypeOf(Demo.Cliente)">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gastos">
+      <EntityTypeMapping TypeName="IsTypeOf(Demo.Gasto)">
+        <MappingFragment StoreEntitySet="Gastos">
+          <ScalarProperty Name="GastoId" ColumnName="GastoId" />
+          <ScalarProperty Name="Importe" ColumnName="Importe" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
