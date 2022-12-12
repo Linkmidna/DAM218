@@ -1,0 +1,17 @@
+[options]
+db_host = 127.0.0.1
+db_name = False
+db_password = Curso2023
+db_port = 5432
+db_sslmode = prefer
+db_template = template0
+db_user = odoo
+addons_path = /opt/odoo/odoo/addons
+
+
+
+
+Usuario exa1_2023
+Contraseña Curso2023
+
+ssh ip@exa1_2023
