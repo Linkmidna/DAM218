@@ -196,7 +196,7 @@ public class Main {
                     break;
                 case "k":
                     try {
-                        List<Grupo> grupos = new ArrayList<>();
+                        List<Grupo> gruposK = new ArrayList<>();
                         Statement stmt = con.createStatement();
                         ResultSet hr = stmt.executeQuery("SELECT codgrupo,nombre,localidad,estilo,esgrupo,annoGrab FROM Grupos;");
 
@@ -214,10 +214,10 @@ public class Main {
                                 grupo.setEsGrupo(false);
                             }
                             grupo.setYearFundacion(hr.getInt(6));
-                            grupos.add(grupo);
+                            gruposK.add(grupo);
                         }
 
-                        List<Cancion> canciones = new ArrayList<>();
+                        List<Cancion> cancionesK = new ArrayList<>();
                         hr = stmt.executeQuery("SELECT numCancion,titulo,duracion,grupo FROM concursomusica.canciones;");
 
                         while (hr.next()) {
@@ -227,16 +227,38 @@ public class Main {
                             cancion.setTitulo(hr.getString(2));
                             cancion.setDuracion(hr.getString(3));
                             cancion.setGrupo(hr.getInt(4));
-                            canciones.add(cancion);
+                            cancionesK.add(cancion);
                         }
+
+                        Query qk = em.createQuery("SELECT e FROM Grupo e");
+                        List<Grupo> listaGrupoK = qk.getResultList();
+                        for(Grupo grupi: listaGrupoK){
+                            em.getTransaction().begin();
+                            em.remove(grupi);
+                            em.getTransaction().commit();
+                        }
+                        qk = em.createQuery("SELECT e FROM Cancion e");
+                        List<Cancion> listaCancionK = qk.getResultList();
+                        for(Cancion can: listaCancionK){
+                            em.getTransaction().begin();
+                            em.remove(can);
+                            em.getTransaction().commit();
+                        }
+
+                        for (Grupo grupK : gruposK){
+                            em.getTransaction().begin();
+                            em.persist(grupK);
+                            em.getTransaction().commit();
+                        }
+                        for (Cancion canK : cancionesK){
+                            em.getTransaction().begin();
+                            em.persist(canK);
+                            em.getTransaction().commit();
+                        }
+
                     }catch (SQLException ex) {
                         throw new RuntimeException(ex);
                     }
-
-                    Query qk = em.createQuery("SELECT e FROM Grupo e");
-                    List<Grupo> listaK = qb.getResultList();
-                    listaB.forEach(Grupo grupo:listaK);
-
                     break;
                 case "0":
                     System.out.println("Gracias por utilizar nuestro programa");
