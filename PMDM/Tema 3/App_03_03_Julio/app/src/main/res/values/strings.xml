@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">App_03_03_Julio</string>
+    <string name="opcion_localizacion">Localización</string>
+    <string name="opcion_mapa">Mapa</string>
+    <string name="latitud">Latitud: %1$f</string>
+    <string name="longitud">Longitud: %1$f</string>
+    <string name="direccion">Dirección: %1$s</string>
+    <string name="localizacion">Obtener localización</string>
+
+</resources>

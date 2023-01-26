@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3c7dcd7a-f72a-4dfd-aa1c-4497dfa5ef61" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Ejemplo_2_Cliente/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejemplo_2_Servidor/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejemplo_3_Cliente/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejemplo_3_Servidor/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio1_A/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio1_B/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Prueba_IP/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2KVCHMbCkApCfeSjUjqOVj6FadC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3c7dcd7a-f72a-4dfd-aa1c-4497dfa5ef61" name="Changes" comment="" />
+      <created>1674050276917</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1674050276917</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
